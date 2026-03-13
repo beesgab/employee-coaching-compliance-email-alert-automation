@@ -93,7 +93,7 @@ def send_email(to_email: str, items, map, attachment=False, cc_emails=[], bcc_em
     while attempts < max_attempts:
         try:
             message = emails.html(
-                subject=f"(Test email from IT) Weekly Coaching Compliance Report ({getDateRange()})",
+                subject=f"Weekly Coaching Compliance Report ({getDateRange()})",
                 html=html_body,
                 text="Please view this email in an HTML-compatible email client.",
                 mail_from=(from_name, from_addr),
