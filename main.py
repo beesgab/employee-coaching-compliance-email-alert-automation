@@ -296,6 +296,7 @@ def main(dev_mode=False):
 
         department_logs = prune_tree(department)
         email_data.append({
+            "director_id": director,
             "data": department_logs, 
             "attachment": attachment
         })
