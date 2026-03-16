@@ -314,8 +314,8 @@ def main(dev_mode=False):
                 writer.writeheader() 
                 writer.writerows(item['attachment'])
 
-        cc_emails = [email for email in os.getenv("CC_EMAILS", "").split(",") if email.strip()] if dev_mode else []
-        bcc_emails = [email for email in os.getenv("BCC_EMAILS", "").split(",") if email.strip()] if dev_mode else []
+        cc_emails = [email for email in os.getenv("CC_EMAILS", "").split(",") if email.strip()]
+        bcc_emails = [email for email in os.getenv("BCC_EMAILS", "").split(",") if email.strip()]
         send_email(to_email=director_email, cc_emails=cc_emails, bcc_emails=bcc_emails, items=item.get('data', {}), map=name_map, attachment= bool(item['attachment']))
 
 
